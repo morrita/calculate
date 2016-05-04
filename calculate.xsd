@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/calculate/"
+    xmlns:tns="http://www.example.org/calculate/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified">    
+
+<!-- filename calculate.xsd -->
+ 
+    <xsd:element name="add">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="inputRecord" type="tns:addType" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+ 
+    <xsd:element name="addResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="out" type="xsd:int" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+ 
+    <xsd:element name="subtract">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="inputRecord" type="tns:subtractType" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+ 
+    <xsd:element name="subtractResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="out" type="xsd:int" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+ 
+    <xsd:complexType name="addType">
+        <xsd:sequence>
+            <xsd:element name="firstNum" type="xsd:int" />
+            <xsd:element name="secondNum" type="xsd:int" />
+        </xsd:sequence>
+    </xsd:complexType>
+ 
+    <xsd:complexType name="subtractType">
+        <xsd:sequence>
+            <xsd:element name="firstNum" type="xsd:int" />
+            <xsd:element name="secondNum" type="xsd:int" />
+        </xsd:sequence>
+    </xsd:complexType>
+ 
+</schema>
